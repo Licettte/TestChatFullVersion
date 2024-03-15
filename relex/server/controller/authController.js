@@ -61,19 +61,15 @@ class AuthController {
 
         } catch
             (e) {
-            res.json(e)
-            // res.status(500).json({message: 'login error'})
+            res.json(e)          
         }
     }
 
     async getUsers(req, res) {
         try {
             const users = await db.query(`SELECT *
-                                          FROM chat_user`);
-
-            // res.header("Access-Control-Allow-Origin", "*");
-            // next();
-            res.json(users.rows)
+                                          FROM chat_user`);       
+                      res.json(users.rows)
         } catch (e) {
 
         }
